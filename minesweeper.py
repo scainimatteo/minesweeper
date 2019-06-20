@@ -1,14 +1,10 @@
 from __future__ import print_function
-import sys
+from random import randint
 from Files import print_def 
 from Files import classes
 from Files import control
 from Files import move
-from random import randint
-# from print_def import * 
-# from classes import * 
-# from control import * 
-# from move import * 
+import sys
 
 sys.path.insert(0, '~/Desktop/Matteo/Informatica/Python/PratoFiorito/Files')
 print("Modalita disponibili:\n[1] facile (9*9, 10)\n[2] media (16*16, 40)\n[3] difficile (16*30, 99)")
