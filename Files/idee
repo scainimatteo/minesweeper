@@ -1,0 +1,17 @@
+IDEE:
+-matrice di oggetti
+-oggetti con: valore (* se non ancora scelti, numero se hanno una bomba vicino, ! se sono una bomba), bomba (1 se sono una bomba, 0 se non lo sono), numero di bombe vicine (controllo con funzione ricorsiva per ogni oggetto della matrice)
+-input del tipo: "inserire i", "inserire j"
+-se scelto uno 0, vengono aperti tutti gli 0 adiacenti
+
+MATRICE:
+    j0  j1  j2  j3   y(m)
+i0  0   0   0   0
+i1  0   0   0   0
+i2  0   0   0   0
+i3  0   0   0   0
+x(n)
+
+BUGS:
+1)
+non funziona change_0_value
