@@ -13,7 +13,6 @@ def move(n, m, field):
             for j in range(0, m):
                 if field[i][j].value == 0 and field[i][j].while_def == 0:
                     ctrl = 1
-                    # print("a", i, j)
                     field[i][j].change_while()
                     change_0_box(i, j, n, m, field)
 
@@ -74,3 +73,21 @@ def reset_all_while(n, m, field):
     for i in range(0,n):
         for j in range(0,m):
             field[i][j].reset_while()
+
+def first_move(n, m, field, x, y):
+    ctrl = 1
+    flag = '0'
+    field[x-1][y-1].change_value(flag)
+    if field[x-1][y-1].next == 0 and flag != 'f':
+        change_0_box((x-1), (y-1), n, m, field)
+
+    while ctrl != 0:
+        ctrl = 0
+        for i in range(0, n):
+            for j in range(0, m):
+                if field[i][j].value == 0 and field[i][j].while_def == 0:
+                    ctrl = 1
+                    field[i][j].change_while()
+                    change_0_box(i, j, n, m, field)
+
+    reset_all_while(n, m, field) 

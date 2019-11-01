@@ -15,3 +15,6 @@ x(n)
 BUGS:
 1)
 non funziona change_0_value
+
+field AND (!x OR !y)
+

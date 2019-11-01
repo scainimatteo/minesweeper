@@ -145,7 +145,6 @@ def move():
             for j in range(0, m):
                 if field[i][j].value == 0 and field[i][j].while_def == 0:
                     ctrl = 1
-                    # print("a", i, j)
                     field[i][j].change_while()
                     change_0_box(i, j)
 

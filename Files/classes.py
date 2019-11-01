@@ -1,4 +1,5 @@
 from random import randint
+from Files import move
 
 class box():
     def __init__(self):
@@ -87,22 +88,29 @@ class box():
                         if field[x+i][y+j].bomb == 1:
                             self.next += 1
 
-def create_bomb(n, m, field):
+def create_bomb(n, m, field, a, o):
     x = randint(0, n-1)
     y = randint(0, m-1)
-    if field[x][y].bomb == 0:
-        field[x][y].be_bomb()
+    if field[x][y].bomb != 0 or (x == a and y == o):
+        create_bomb(n, m, field, a, o)
     else:
-        create_bomb(n, m, field)
+        field[x][y].be_bomb()
 
 def generate_field(n, m, mines, field):
     for i in range(0,n):
         for j in range(0,m):
             new = box()
             field[i].append(new)
+    
+    x = int(input("X: "))
+    y = int(input("Y: "))
 
     for i in range(0, mines):
-        create_bomb(n, m, field)
+        create_bomb(n, m, field, x, y)
+
+    total_count(n, m, field)
+
+    move.first_move(n, m, field, x, y)
 
 def total_count(n, m, field):
     for x in range(0,n):
